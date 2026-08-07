@@ -1,63 +1,115 @@
-# 3.42" 258×960 TFT MIPI module (AXS15231B) — documentation & samples
+<p align="left"><img alt="OSPTEK" src="./images/logo.png" width="200" /></p>
 
-**简体中文：** [`README.md`](README.md)
+<h1 align="center">OSPTEK 3.42″ TFT 258×960 (AXS15231B · MIPI)</h1>
+
+<p align="center"><b>Bar TFT module · MIPI · AXS15231B · capacitive touch</b></p>
+
+<p align="center"><a href="./README.md">简体中文</a> | English</p>
+
+<p align="center">
+  <img alt="Size: 3.42 inch" src="https://img.shields.io/badge/Size-3.42%22-3498DB?style=flat-square" />
+  <img alt="Resolution: 258x960" src="https://img.shields.io/badge/Resolution-258%C3%97960-8E44AD?style=flat-square" />
+  <img alt="Interface: MIPI" src="https://img.shields.io/badge/Interface-MIPI-27AE60?style=flat-square" />
+  <img alt="Driver: AXS15231B" src="https://img.shields.io/badge/Driver-AXS15231B-E7352C?style=flat-square" />
+</p>
+
+## Contents
+
+- [Overview](#overview)
+- [Specifications](#specifications)
+- [Sample projects](#sample-projects)
+- [Repository layout](#repository-layout)
+- [Resources](#resources)
+- [Buy](#buy)
+- [Support](#support)
 
 ---
 
-> This repository provides **sample projects** for this module, together with datasheets, specifications, and interface / bring-up documentation for selection reference and integration.
+## Overview
 
-## Product overview
+OSPTEK **3.42″ 258×960 TFT** is a **MIPI** color display module. Display and capacitive touch are both driven by **AXS15231B** (touch over I2C). Suited to bar-style HMI and narrow side panels.
 
-| Item | Description |
-|:--|:--|
-| Module | 3.42-inch **TFT** panel, **258×960** resolution |
-| Interface | **MIPI** |
-| Driver IC | **AXS15231B** |
-| Spec ID | **`3.42-tft-258x960-mipi-axs15231b`** is the common product designation in documentation |
+Spec ID (repository name): `3.42-tft-258x960-mipi-axs15231b`
 
----
+Current module version: **YDP342B001-V13**. Electrical and mechanical details follow [`docs/YDP_342_B001_V13_363bf4a9b8.pdf`](./docs/YDP_342_B001_V13_363bf4a9b8.pdf).
+
+## Specifications
+
+| Item | Spec |
+| ---- | ---- |
+| Size | 3.42 inch |
+| Type | TFT (color) |
+| Resolution | 258×960 |
+| Interface | MIPI |
+| Driver IC | AXS15231B |
+| Touch driver | AXS15231B |
+
+> Full outline, FPC definition, power, and timing follow the product datasheet / driver IC datasheet.
+
+## Sample projects
+
+| Description | Path |
+| ---- | ---- |
+| ESP32-P4 · AXS15231B MIPI + esp-lvgl-port / LVGL9 | [`examples/P4-IDF_AXS15231B-MIPI_ESP-LVGL-PORT_V9/`](./examples/P4-IDF_AXS15231B-MIPI_ESP-LVGL-PORT_V9/) |
+| ESP32-P4 · LVGL + TE | [`examples/with-te/p4-idf_axs15231b-mipi_lvgl_common_demo/`](./examples/with-te/p4-idf_axs15231b-mipi_lvgl_common_demo/) |
+| ESP32-P4 · JPEG decode demo | [`examples/jpg-decoder/p4-idf_axs15231b-mipi_jpeg-decode/`](./examples/jpg-decoder/p4-idf_axs15231b-mipi_jpeg-decode/) |
+| ESP32-P4 · MIPI display test (LVGL9) | [`examples/display-touch-test/esp32p4-idf5_axs15231b-mipi_lvgl9/`](./examples/display-touch-test/esp32p4-idf5_axs15231b-mipi_lvgl9/) |
+| ESP32-P4 · touch I2C test | [`examples/display-touch-test/esp32p4-idf5_axs15231b-touch-i2c/`](./examples/display-touch-test/esp32p4-idf5_axs15231b-touch-i2c/) |
 
 ## Repository layout
 
-### Top-level
+```text
+3.42-tft-258x960-mipi-axs15231b/
+├── README.md
+├── README_EN.md
+├── MODULE_VERSION.md
+├── LICENSE
+├── images/          # README assets
+├── docs/            # datasheets, init, etc.
+└── examples/        # sample projects
+```
 
-| Path | Contents |
-|:--|:--|
-| `docs/` | Datasheets, specifications, initialization documentation |
-| `examples/` | **Sample projects** by category |
+## Resources
 
-### `examples/` layout
+### Product files
 
-| Location | Description (internal package folder) |
-|:--|:--|
-| `examples/` root | **ESP-IDF代码** (esp-lvgl-port + LVGL9) |
-| `with-te/` | **屏幕防撕裂代码** |
-| `jpg-decoder/` | **jpeg解码** |
-| `display-touch-test/` | **单独测试显示**、**单独测试触摸** |
+| Resource | Link |
+| ---- | ---- |
+| Product datasheet (YDP342B001-V13) | [`docs/YDP_342_B001_V13_363bf4a9b8.pdf`](./docs/YDP_342_B001_V13_363bf4a9b8.pdf) |
+| Driver IC datasheet (AXS15231B) | [`docs/AXS_15231_B_Datasheet_V0_9_20240221_5a76ce6ce2.pdf`](./docs/AXS_15231_B_Datasheet_V0_9_20240221_5a76ce6ce2.pdf) |
+| Init sequence (text) | [`docs/371+231_241217(显示底部线条、残影、喇叭黑屏优化、TE修改）.txt`](./docs/371%2B231_241217%28%E6%98%BE%E7%A4%BA%E5%BA%95%E9%83%A8%E7%BA%BF%E6%9D%A1%E3%80%81%E6%AE%8B%E5%BD%B1%E3%80%81%E5%96%87%E5%8F%AD%E9%BB%91%E5%B1%8F%E4%BC%98%E5%8C%96%E3%80%81TE%E4%BF%AE%E6%94%B9%EF%BC%89.txt) |
 
-### Sample project paths
+### Samples
 
-#### Baseline (`examples/` root)
+- [ESP32-P4 AXS15231B MIPI + LVGL9](./examples/P4-IDF_AXS15231B-MIPI_ESP-LVGL-PORT_V9/)
+- [ESP32-P4 LVGL + TE](./examples/with-te/p4-idf_axs15231b-mipi_lvgl_common_demo/)
+- [ESP32-P4 JPEG decode](./examples/jpg-decoder/p4-idf_axs15231b-mipi_jpeg-decode/)
+- [ESP32-P4 MIPI display test](./examples/display-touch-test/esp32p4-idf5_axs15231b-mipi_lvgl9/)
+- [ESP32-P4 touch I2C test](./examples/display-touch-test/esp32p4-idf5_axs15231b-touch-i2c/)
 
-| Description | Path |
-|:--|:--|
-| esp-lvgl-port + LVGL9 | `examples/P4-IDF_AXS15231B-MIPI_ESP-LVGL-PORT_V9/` |
+## Buy
 
-#### Tear avoidance (`with-te/`)
+<p align="center">
+  <a href="https://www.aliexpress.com/store/1105701619"><img alt="AliExpress store" src="https://img.shields.io/badge/AliExpress-Official_Store-FF6A00?style=for-the-badge" /></a>
+  &nbsp;&nbsp;
+  <a href="https://shop110742373.taobao.com/"><img alt="Taobao store" src="https://img.shields.io/badge/Taobao-Official_Store-FF6A00?style=for-the-badge" /></a>
+</p>
 
-| Description | Path |
-|:--|:--|
-| LVGL common demo | `examples/with-te/p4-idf_axs15231b-mipi_lvgl_common_demo/` |
+**Overseas (AliExpress)**
 
-#### JPEG decode (`jpg-decoder/`)
+- Store: [OSPTEK Official Store](https://www.aliexpress.com/store/1105701619)
 
-| Description | Path |
-|:--|:--|
-| JPEG decode | `examples/jpg-decoder/p4-idf_axs15231b-mipi_jpeg-decode/` |
+**China (Taobao)**
 
-#### Display / touch tests (`display-touch-test/`)
+- Store: [鱼鹰光电工厂店](https://shop110742373.taobao.com/)
 
-| Description | Path |
-|:--|:--|
-| MIPI display test | `examples/display-touch-test/esp32p4-idf5_axs15231b-mipi_lvgl9/` |
-| Touch I2C test | `examples/display-touch-test/esp32p4-idf5_axs15231b-touch-i2c/` |
+## Support
+
+- Technical support / product inquiry: <luyu@osptek.com>
+- QQ group: **985881096**
+- Website: <https://osptek.com/>
+- Feel free to open an Issue in this repository with any questions
+
+---
+
+<p align="center"><sub>© 2026 OSPTEK · Materials in this repository are licensed under CC BY 4.0</sub></p>
