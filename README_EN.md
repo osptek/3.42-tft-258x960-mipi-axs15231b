@@ -44,8 +44,7 @@ Repo id: `3.42-tft-258x960-mipi-axs15231b`
 
 ## YDP342B001-V13
 
-**Notes:** Module.
-
+**Notes:** With touch (AXS15231B).
 ---
 
 ## How to Switch Branches
