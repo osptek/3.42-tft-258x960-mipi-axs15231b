@@ -38,11 +38,13 @@ Repo id: `3.42-tft-258x960-mipi-axs15231b`
 
 | Version | Image | Notes |
 | ------- | ----- | ----- |
-| YDP342B001-V13 | — | [Details](#ydp342b001-v13) |
+| YDP342B001-V13 | <img alt="YDP342B001-V13" src="./images/YDP342B001-V13.png" width="120" /> | [Details](#ydp342b001-v13) |
 
 ---
 
 ## YDP342B001-V13
+
+<p align="center"><img alt="YDP342B001-V13" src="./images/YDP342B001-V13.png" width="320" /></p>
 
 **Notes:** With touch (AXS15231B).
 
