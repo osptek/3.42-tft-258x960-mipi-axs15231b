@@ -18,7 +18,6 @@
 - [About](#about)
 - [Versions](#versions)
 - [YDP342B001-V13](#ydp342b001-v13)
-- [How to Switch Branches](#how-to-switch-branches)
 - [Where to Buy](#where-to-buy)
 - [Support](#support)
 
@@ -28,7 +27,7 @@
 
 This repository holds materials for the **3.42″ 258×960 TFT (MIPI · AXS15231B)** module family.
 
-**`main` is the navigation page** (repository default). Use the table below for a quick scan; click **Details** to jump to the section on this page. For a given version’s full content, switch to that **version branch** (see below).
+The **root README is the navigation page**. Use the table below for a quick scan; open **Full docs** to enter that **part-number folder** under `versions/` (product page, datasheets, and examples live there).
 
 Repo id: `3.42-tft-258x960-mipi-axs15231b`
 
@@ -36,26 +35,19 @@ Repo id: `3.42-tft-258x960-mipi-axs15231b`
 
 ## Versions
 
-| Version | Image | Notes |
-| ------- | ----- | ----- |
-| YDP342B001-V13 | <img alt="YDP342B001-V13" src="./images/YDP342B001-V13.png" width="120" /> | [Details](#ydp342b001-v13) |
+| Version | Image | Summary | Full docs |
+| ------- | ----- | ------- | --------- |
+| YDP342B001-V13 | <img alt="YDP342B001-V13" src="./versions/YDP342B001-V13/images/product.png" width="120" /> | [Summary](#ydp342b001-v13) | [Full docs](./versions/YDP342B001-V13/) |
 
 ---
 
 ## YDP342B001-V13
 
-<p align="center"><img alt="YDP342B001-V13" src="./images/YDP342B001-V13.png" width="320" /></p>
+<p align="center"><img alt="YDP342B001-V13" src="./versions/YDP342B001-V13/images/product.png" width="320" /></p>
 
 **Notes:** With touch (AXS15231B).
 
----
-
-## How to Switch Branches
-
-Full product materials are on each **version branch**; `main` is navigation only.
-
-- **Web:** open the branch dropdown at the top left of the repository page and select the branch that matches your part number.
-- **CLI:** after cloning, run `git checkout <version-branch>`; if the repo is already local, `git fetch` first, then switch.
+Full product page, datasheets, and examples: [versions/YDP342B001-V13/](./versions/YDP342B001-V13/)
 
 ---
 
